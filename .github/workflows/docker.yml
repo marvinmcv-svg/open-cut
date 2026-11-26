@@ -241,7 +241,7 @@ jobs:
           filter: blob:none
 
       - name: Download the native macOS SSH runtime
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
         with:
           name: ${{ needs.macos_runner_runtime.outputs.artifact_name }}
           path: docker/remote-runtimes/
@@ -386,7 +386,7 @@ jobs:
       - name: Download the merge-queue image
         if: steps.find.outputs.run_id != ''
         continue-on-error: true
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
         with:
           name: merge-group-image-${{ matrix.arch }}
           run-id: ${{ steps.find.outputs.run_id }}
@@ -645,7 +645,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Download digests
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
         with:
           path: /tmp/digests
           pattern: digests-production-*
